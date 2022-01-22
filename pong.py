@@ -1,6 +1,7 @@
 """Simple Pong game"""
 
 import turtle
+import winsound
 
 #creating window for game
 wn = turtle.Screen()
@@ -113,9 +114,11 @@ while True:
     if ball.ycor() > 290:
         ball.sety(290)
         ball.dy *= -1
+        winsound.PlaySound('483602__raclure__game-bump.mp3', winsound.SND_ASYNC)
     elif ball.ycor() < -290:
         ball.sety(-290)
         ball.dy *= -1
+        winsound.PlaySound('483602__raclure__game-bump.mp3', winsound.SND_ASYNC)
 
     #x borders
     if ball.xcor() > 390:
@@ -138,8 +141,10 @@ while True:
     if (ball.xcor() > 340  and ball.xcor() < 350) and (ball.ycor() < paddle_b.ycor() + 40 and ball.ycor() > paddle_b.ycor() - 40):
         ball.setx(340)
         ball.dx *= -1
+        winsound.PlaySound('269718__michorvath__ping-pong-ball-hit.wav', winsound.SND_ASYNC)
 
     if (ball.xcor() < -340  and ball.xcor() > -350) and (ball.ycor() < paddle_a.ycor() + 40 and ball.ycor() > paddle_a.ycor() - 40):
         ball.setx(-340)
         ball.dx *= -1
+        winsound.PlaySound('269718__michorvath__ping-pong-ball-hit.wav', winsound.SND_ASYNC)
     
