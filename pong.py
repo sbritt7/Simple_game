@@ -2,6 +2,7 @@
 
 import turtle
 import winsound
+import time
 
 #creating window for game
 wn = turtle.Screen()
@@ -114,25 +115,29 @@ while True:
     if ball.ycor() > 290:
         ball.sety(290)
         ball.dy *= -1
-        winsound.PlaySound('483602__raclure__game-bump.mp3', winsound.SND_ASYNC)
+        winsound.PlaySound('446100__justinvoke__bounce.wav', winsound.SND_ASYNC)
     elif ball.ycor() < -290:
         ball.sety(-290)
         ball.dy *= -1
-        winsound.PlaySound('483602__raclure__game-bump.mp3', winsound.SND_ASYNC)
+        winsound.PlaySound('446100__justinvoke__bounce.wav', winsound.SND_ASYNC)
 
     #x borders
     if ball.xcor() > 390:
         ball.goto(0, 0)
+        time.sleep(1)
         ball.dx *= -1
         score_a += 1
         pen.clear()
         pen.write(f"Player A: {score_a}  Player B: {score_b}", align='center', font=('Courier', 24, 'normal'))
+        winsound.PlaySound('142608__autistic-lucario__error.wav', winsound.SND_ASYNC)
     elif ball.xcor() < -390:
         ball.goto(0,0)
+        time.sleep(1)
         ball.dx *= -1
         score_b += 1
         pen.clear()
         pen.write(f"Player A: {score_a}  Player B: {score_b}", align='center', font=('Courier', 24, 'normal'))
+        winsound.PlaySound('142608__autistic-lucario__error.wav', winsound.SND_ASYNC)
 
 
 
